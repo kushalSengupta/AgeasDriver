@@ -1,0 +1,112 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AgeasDriver.Pages.FrmTwiterePost"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <phone:PhoneApplicationPage.Resources>
+        <ControlTemplate x:Key="buttonTemplatePost" TargetType="Button">
+            <Grid Background="Transparent">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+
+                <Image x:Name="image1" Source="/Images/facebooktwitterpage/tweetButton.png" Stretch="Fill" Opacity="1"/>
+                <Image x:Name="image2" Source="/Images/facebooktwitterpage/tweetButton.png" Stretch="Fill" />
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="buttonTemplateCancle" TargetType="Button">
+            <Grid Background="Transparent">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+
+                <Image x:Name="image1" Source="/Images/facebooktwitterpage/twitterCross.png" Stretch="Fill" Opacity="1"/>
+                <Image x:Name="image2" Source="/Images/facebooktwitterpage/twitterCross.png" Stretch="Fill" />
+            </Grid>
+        </ControlTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+
+
+
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <Image Name="ImgHeader" Stretch="Fill" HorizontalAlignment="Left" Height="Auto" Margin="0,0,0,0" Grid.Row="0"  VerticalAlignment="Top"  Grid.Column="0"  Source="/Images/facebooktwitterpage/twitterStrip.png"/>
+        <Button Template="{StaticResource buttonTemplateCancle}" Name="btnCancle" Content="" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="0" VerticalAlignment="Center" Width="50"  UseLayoutRounding="False" Height="50"  Click="btnCalcle_Click" >
+        </Button>
+        <Image Name="ImgBackground" Stretch="Fill" HorizontalAlignment="Left" Height="Auto" Margin="0,0,0,0" Grid.Row="1"  VerticalAlignment="Top"  Grid.Column="0"  Source="/Images/facebooktwitterpage/twitterBg.png"/>
+        <Image Name="ImgPost" Width="420" HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="1"  VerticalAlignment="Center"  Grid.Column="0"  Source="/Images/facebooktwitterpage/twitterTextbox.png"/>
+        <Button Template="{StaticResource buttonTemplatePost}" Name="btnSubmit" Content="" HorizontalAlignment="Center" Margin="250,250,0,0" Grid.Row="1" VerticalAlignment="Center" Width="150"  UseLayoutRounding="False" Height="50"  Click="btnPost_Click" >
+        </Button>
+        <TextBlock Name="TxtPost"   HorizontalAlignment="Center" Height="50" Margin="20,-30,0,0" Grid.Row="1" FontSize="20"  Text="" VerticalAlignment="Center" Width="320" Foreground="Blue" TextAlignment="Left" FontWeight="Bold" />
+        <TextBlock Name="Txtlink"   HorizontalAlignment="Center" Height="30" Margin="-20,60,0,0" Grid.Row="1" FontSize="20" Text="" VerticalAlignment="Center" Width="300" Foreground="Blue" TextAlignment="Left" FontWeight="Bold" />
+        <phone:WebBrowser  Margin="0,0,0,0" Name="loginBrowserControl" Visibility="Collapsed" Grid.Row="0" Grid.RowSpan="2"  Width="480" Height="800"  Navigated="loginBrowserControl_Navigated" Navigating="loginBrowserControl_Navigating"/>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

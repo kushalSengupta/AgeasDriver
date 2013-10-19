@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AgeasDriver.Pages.FrmGraph"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:amq="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False" Loaded="Graph_Loaded" >
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+
+        <Image Name="ImgHeader" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="0"  VerticalAlignment="Top"  Grid.Column="0" Grid.ColumnSpan="4" Width="480" Height="51"  Source="/Images/Graph/graphTopStrip_480.png" />
+        <Image Name="ImgBack" Stretch="Fill"  HorizontalAlignment="Left" Height="29" Width="29"  Margin="20,0,0,0" Grid.Row="0"  VerticalAlignment="Center"  Grid.Column="0" Tap="BackToProgress"  Source="/Images/InnerTab/back_480.png" />
+
+        <Image Name="ImgMapDeselect" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1" Grid.RowSpan="2" Height="63" Width="160" Grid.Column="0"   VerticalAlignment="Top" Tap="MapTap"  Source="/Images/InnerTab/map_480.png" />
+        <Image Name="ImgGrapSelect" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1" Grid.Column="1"  Grid.RowSpan="2" Height="63" Width="160"  VerticalAlignment="Top"  Source="/Images/InnerTab/graphActive_480.png" />
+        <Image Name="ImgDetailsDeselect" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Height="63" Width="160"  VerticalAlignment="Top" Tap="DetailsTap_Click"  Source="/Images/InnerTab/details_480.png"  />
+
+        <amq:SerialChart Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="chart1" DataSource="{Binding Data}" CategoryValueMemberPath="cat1"
+                         AxisForeground="{x:Null}"
+                             MinimumCategoryGridStep="100"
+                             MinimumValueGridStep="50"
+                         GridStroke="DarkGray"  RenderTransformOrigin="0.5,0.5" >
+            <amq:SerialChart.Graphs>
+                <amq:AreaGraph ValueMemberPath="val3"  Brush="#8000F3FF"  >
+
+                </amq:AreaGraph>
+            </amq:SerialChart.Graphs>
+        </amq:SerialChart>
+        <Image Name="ImgVelocitySelect" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="2" Grid.RowSpan="2" Height="60" Width="240" Grid.Column="0" Grid.ColumnSpan="2"  VerticalAlignment="Top"  Tap="VelocitySelect" Source="/Images/InnerTab/velocityActive_480.png" />
+        <Image Name="ImgAccelerationDeselect" Stretch="Fill" HorizontalAlignment="Left"  Margin="80,0,0,0" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="60" Width="240" VerticalAlignment="Top" Tap="AccelerationSelect" Source="/Images/InnerTab/acceleration_480.png"  />
+    </Grid>
+
+</phone:PhoneApplicationPage>

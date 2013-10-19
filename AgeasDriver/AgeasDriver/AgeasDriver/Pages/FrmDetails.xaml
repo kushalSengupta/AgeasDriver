@@ -1,0 +1,96 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AgeasDriver.Pages.FrmDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+           
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Image Name="ImgHeader" Stretch="Fill" HorizontalAlignment="Left" Height="60" Width="480" Margin="0,0,0,0" Grid.Row="0"  VerticalAlignment="Top"  Grid.Column="0" Grid.ColumnSpan="3"   />
+        <Image Name="Imgbackground" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Grid.ColumnSpan="4"  />
+        <Image Name="ImgMapSelect" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1" Grid.RowSpan="2"  Grid.Column="0"  Height="65" Width="160" VerticalAlignment="Top" Tap="MapTap_Click" />
+        <Image Name="ImgGraphDeselect" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1" Grid.Column="1"  Grid.RowSpan="2" Height="65" Width="160"  VerticalAlignment="Top" Tap="GraphTap_Click"  />
+        <Image Name="ImgDetailsDeselect" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"  Height="65" Width="160" VerticalAlignment="Top"   />
+
+        <Grid x:Name="TableLayout" Background="Transparent" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Image Name="ImgTblR0C1" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="0"  VerticalAlignment="Top"  Grid.Column="1"    />
+            <Image Name="ImgTblR0C2" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="0"  VerticalAlignment="Top"  Grid.Column="2"    />
+            <TextBlock Name="TxtR0C1"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="0" Grid.Column="1" Text="Date" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            <TextBlock Name="TxtR0C2"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" Text="" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+
+            <Image Name="ImgTblR1C1" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1"  VerticalAlignment="Top"  Grid.Column="1"    />
+            <Image Name="ImgTblR1C2" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="1"  VerticalAlignment="Top"  Grid.Column="2"    />
+            <TextBlock Name="TxtR1C1"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="1" Grid.Column="1" Text="Distance" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            <TextBlock Name="TxtR1C2"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="1" Grid.Column="2" Text="" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            
+            <Image Name="ImgTblR2C1" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="2"  VerticalAlignment="Top"  Grid.Column="1"    />
+            <Image Name="ImgTblR2C2" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="2"  VerticalAlignment="Top"  Grid.Column="2"    />
+            <TextBlock Name="TxtR2C1"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" Text="Total Time" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            <TextBlock Name="TxtR2C2"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="2" Grid.Column="2" Text="" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            
+            <Image Name="ImgTblR3C1" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3"  VerticalAlignment="Top"  Grid.Column="1"    />
+            <Image Name="ImgTblR3C2" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="3"  VerticalAlignment="Top"  Grid.Column="2"    />
+            <TextBlock Name="TxtR3C1"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="3" Grid.Column="1" Text="Max Velocity" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            <TextBlock Name="TxtR3C2"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="3" Grid.Column="2" Text="" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+
+            <Image Name="ImgTblR4C1" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="4"  VerticalAlignment="Top"  Grid.Column="1"    />
+            <Image Name="ImgTblR4C2" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="4"  VerticalAlignment="Top"  Grid.Column="2"    />
+            <TextBlock Name="TxtR4C1"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="4" Grid.Column="1" Text="Avg. Velocity" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            <TextBlock Name="TxtR4C2"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="4" Grid.Column="2" Text="" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            
+            <Image Name="ImgTblR5C1" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="5"  VerticalAlignment="Top"  Grid.Column="1"    />
+            <Image Name="ImgTblR5C2" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="5"  VerticalAlignment="Top"  Grid.Column="2"    />
+            <TextBlock Name="TxtR5C1"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="5" Grid.Column="1" Text="Max Acceleration" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            <TextBlock Name="TxtR5C2"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="5" Grid.Column="2" Text="" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            
+            <Image Name="ImgTblR6C1" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="6"  VerticalAlignment="Top"  Grid.Column="1"    />
+            <Image Name="ImgTblR6C2" Stretch="Fill" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="6"  VerticalAlignment="Top"  Grid.Column="2"    />
+            <TextBlock Name="TxtR6C1"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="6" Grid.Column="1" Text="Max Braking" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            <TextBlock Name="TxtR6C2"  HorizontalAlignment="Center"  Margin="0,0,0,0" Grid.Row="6" Grid.Column="2" Text="" VerticalAlignment="Center"  Foreground="#15317E" TextAlignment="Center" FontWeight="SemiBold" />
+            
+            
+            
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3F9A017-A341-4067-80DC-B028C7568A9B}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgeasDriver</RootNamespace>
+    <AssemblyName>AgeasDriver</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>AgeasDriver_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>AgeasDriver.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AppSettings.cs" />
+    <Compile Include="Common\ClsCommon.cs" />
+    <Compile Include="Common\MainUtil.cs" />
+    <Compile Include="Common\OAuthUtil.cs" />
+    <Compile Include="Controls\WaterMarkTextboxNormal.xaml.cs" />
+    <Compile Include="Controls\WaterMarkTextboxWhite.xaml.cs" />
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="DBHelper\ClsDBHelper.cs" />
+    <Compile Include="Helper\ClsJourney.cs" />
+    <Compile Include="Helper\ClsJourneyDetails.cs" />
+    <Compile Include="Helper\ClsSubmitDetails.cs" />
+    <Compile Include="Helper\ClsSubmitJourneyLocation.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmDetails.xaml.cs">
+      <DependentUpon>FrmDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmFacebookPost.xaml.cs">
+      <DependentUpon>FrmFacebookPost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FacebookLoginPage.xaml.cs">
+      <DependentUpon>FacebookLoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmGraph.xaml.cs">
+      <DependentUpon>FrmGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmHelp.xaml.cs">
+      <DependentUpon>FrmHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmMap.xaml.cs">
+      <DependentUpon>FrmMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmProgress.xaml.cs">
+      <DependentUpon>FrmProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmQuote.xaml.cs">
+      <DependentUpon>FrmQuote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmRecord.xaml.cs">
+      <DependentUpon>frmRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmRegistration.xaml.cs">
+      <DependentUpon>FrmRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmScore.xaml.cs">
+      <DependentUpon>FrmScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmTwiterePost.xaml.cs">
+      <DependentUpon>FrmTwiterePost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Controls\WaterMarkTextboxNormal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WaterMarkTextboxWhite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmFacebookPost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FacebookLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmQuote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\frmRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FrmTwiterePost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\3rdscreenBg.png" />
+    <Content Include="Images\animationImage\AGEAS%280%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%281%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%2810%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%2811%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%2812%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%2813%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%2814%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%2815%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%282%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%283%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%284%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%285%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%286%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%287%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%288%29_768.png" />
+    <Content Include="Images\animationImage\AGEAS%289%29_768.png" />
+    <Content Include="Images\bgIMG_480.png" />
+    <Content Include="Images\blueButton.png" />
+    <Content Include="Images\blueRoad.png" />
+    <Content Include="Images\border.png" />
+    <Content Include="Images\car.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\DetailsBg.png" />
+    <Content Include="Images\Details\DetailsBg_480.png" />
+    <Content Include="Images\Details\journeyTopStrip480.png" />
+    <Content Include="Images\Details\journeyTopStrip768.png" />
+    <Content Include="Images\Details\leftTd_480.png" />
+    <Content Include="Images\Details\rightTd_480.png" />
+    <Content Include="Images\deviderLine.png" />
+    <Content Include="Images\facebookBg.png" />
+    <Content Include="Images\facebooktwitterpage\facebookBg.png" />
+    <Content Include="Images\facebooktwitterpage\facebookCross.png" />
+    <Content Include="Images\facebooktwitterpage\facebookStrip.png" />
+    <Content Include="Images\facebooktwitterpage\facebookTextbox.png" />
+    <Content Include="Images\facebooktwitterpage\shareButton.png" />
+    <Content Include="Images\facebooktwitterpage\tweetButton.png" />
+    <Content Include="Images\facebooktwitterpage\twitterBg.png" />
+    <Content Include="Images\facebooktwitterpage\twitterCross.png" />
+    <Content Include="Images\facebooktwitterpage\twitterStrip.png" />
+    <Content Include="Images\facebooktwitterpage\twitterTextbox.png" />
+    <Content Include="Images\General\accelerationvsdistanceSelected_480.png" />
+    <Content Include="Images\General\distancevsaccelerationSelected_768.png" />
+    <Content Include="Images\General\accelerationvsdistance_480.png" />
+    <Content Include="Images\General\distancevsacceleration_768.png" />
+    <Content Include="Images\General\backButton.png" />
+    <Content Include="Images\General\detailsActive_480.png" />
+    <Content Include="Images\General\details_768.png" />
+    <Content Include="Images\General\details_480.png" />
+    <Content Include="Images\General\distancevsaccelerationSelected_480.png" />
+    <Content Include="Images\General\distancevsacceleration_480.png" />
+    <Content Include="Images\General\distancevsvelocitySelected_480.png" />
+    <Content Include="Images\General\distancevsvelocity_480.png" />
+    <Content Include="Images\General\dotedDevider.png" />
+    <Content Include="Images\General\expandIcon.png" />
+    <Content Include="Images\Help\helpFeedbackTopStrip_768.png" />
+    <Content Include="Images\Help\helpFullCloudBg_480.png" />
+    <Content Include="Images\Help\helpFullCloudBg_768.png" />
+    <Content Include="Images\Quote\getaquoteStrip_768.png" />
+    <Content Include="Images\Registration\fullCloudBg_480.png" />
+    <Content Include="Images\Registration\fullCloudBg_768.png" />
+    <Content Include="Images\General\graphActive_480.png" />
+    <Content Include="Images\General\graph_480.png" />
+    <Content Include="Images\General\graph_768.png" />
+    <Content Include="Images\General\helpSelected_480.png" />
+    <Content Include="Images\General\helpSelected_768.png" />
+    <Content Include="Images\General\help_480.png" />
+    <Content Include="Images\General\help_768.png" />
+    <Content Include="Images\General\loader.png" />
+    <Content Include="Images\General\mapActive_480.png" />
+    <Content Include="Images\General\mapActive_768.png" />
+    <Content Include="Images\General\map_480.png" />
+    <Content Include="Images\General\map_768.png" />
+    <Content Include="Images\General\progressSelected_480.png" />
+    <Content Include="Images\General\progressSelected_768.png" />
+    <Content Include="Images\General\progress_480.png" />
+    <Content Include="Images\General\progress_768.png" />
+    <Content Include="Images\General\quoteSelected_480.png" />
+    <Content Include="Images\General\quoteSelected_768.png" />
+    <Content Include="Images\General\quote_480.png" />
+    <Content Include="Images\General\quote_768.png" />
+    <Content Include="Images\General\recordSelected_480.png" />
+    <Content Include="Images\General\recordSelected_768.png" />
+    <Content Include="Images\General\record_480.png" />
+    <Content Include="Images\General\record_768.png" />
+    <Content Include="Images\Registration\skipButton_480.png" />
+    <Content Include="Images\Registration\skipButton_768.png" />
+    <Content Include="Images\General\submitButton.png" />
+    <Content Include="Images\General\tableLine.png" />
+    <Content Include="Images\General\velocityvsdistanceSelected_480.png" />
+    <Content Include="Images\General\distancevsvelocitySelected_768.png" />
+    <Content Include="Images\General\velocityvsdistance_480.png" />
+    <Content Include="Images\General\distancevsvelocity_768.png" />
+    <Content Include="Images\getaquoteButton.png" />
+    <Content Include="Images\graphBg.png" />
+    <Content Include="Images\graphbg_new.png" />
+    <Content Include="Images\graphpageBg_480.png" />
+    <Content Include="Images\Graph\graphTopStrip_480.png" />
+    <Content Include="Images\Graph\graphTopStrip_768.png" />
+    <Content Include="Images\greenRoad.png" />
+    <Content Include="Images\greyRoad.png" />
+    <Content Include="Images\Help\emailUs_768.png" />
+    <Content Include="Images\Help\emailUs_480.png" />
+    <Content Include="Images\Help\helpFeedbackTopStrip_480.png" />
+    <Content Include="Images\Map\mapTopStrip_480.png" />
+    <Content Include="Images\Map\mapTopStrip_768.png" />
+    <Content Include="Images\Progress\tableHeader_480.png" />
+    <Content Include="Images\Progress\tableHeader_768.png" />
+    <Content Include="Images\Quote\getaquoteButton_480.png" />
+    <Content Include="Images\Help\reportAccident_480.png" />
+    <Content Include="Images\Help\reportAccident_768.png" />
+    <Content Include="Images\icon\icon.jpeg" />
+    <Content Include="Images\icon\icon.png" />
+    <Content Include="Images\Login_fullBg.jpg" />
+    <Content Include="Images\Login_fullBg.png" />
+    <Content Include="Images\Map\pin_red.png" />
+    <Content Include="Images\Map\pin_green.png" />
+    <Content Include="Images\mileIndicator_480.png" />
+    <Content Include="Images\numberBubble.png" />
+    <Content Include="Images\Progress\display%28100%29_480.png" />
+    <Content Include="Images\Progress\display%28100%29_768.png" />
+    <Content Include="Images\Progress\display%28150%29_480.png" />
+    <Content Include="Images\Progress\display%28150%29_768.png" />
+    <Content Include="Images\Progress\display%2850%29_480.png" />
+    <Content Include="Images\Progress\display%2850%29_768.png" />
+    <Content Include="Images\Progress\displayUnselected_480.png" />
+    <Content Include="Images\Progress\displayUnselected_768.png" />
+    <Content Include="Images\Progress\facebookCancel.png" />
+    <Content Include="Images\Progress\facebookIcon_480.png" />
+    <Content Include="Images\Progress\facebookIcon_768.png" />
+    <Content Include="Images\Progress\loaderFull.png" />
+    <Content Include="Images\Progress\mainBg_480.png" />
+    <Content Include="Images\Progress\mainBg_progress1_480.png" />
+    <Content Include="Images\Progress\mainBg_progress1_768.png" />
+    <Content Include="Images\Progress\mainBg_progress2_480.png" />
+    <Content Include="Images\Progress\mainBg_progress2_768.png" />
+    <Content Include="Images\Progress\mainBg_progress_480.png" />
+    <Content Include="Images\Progress\twitterCancel.png" />
+    <Content Include="Images\Progress\twitterIcon_480.png" />
+    <Content Include="Images\Progress\twitterIcon_768.png" />
+    <Content Include="Images\Progress\upperStrip_480.png" />
+    <Content Include="Images\Progress\upperStrip_768.png" />
+    <Content Include="Images\Quote\getaquoteButton_768.png" />
+    <Content Include="Images\Quote\getaquoteStrip_480.png" />
+    <Content Include="Images\Record\greenlightActive_480.png" />
+    <Content Include="Images\Record\greenlightActive_768.png" />
+    <Content Include="Images\Record\greenlight_480.png" />
+    <Content Include="Images\Record\greenlight_768.png" />
+    <Content Include="Images\Record\mainBg_480.png" />
+    <Content Include="Images\Record\mainBg_768.png" />
+    <Content Include="Images\Record\Progress_bg_480.png" />
+    <Content Include="Images\Record\redlightActive_480.png" />
+    <Content Include="Images\Record\redlightActive_768.png" />
+    <Content Include="Images\Record\redlight_480.png" />
+    <Content Include="Images\Record\Redlight_768.png" />
+    <Content Include="Images\Record\startButton_480.png" />
+    <Content Include="Images\Record\startButton_768.png" />
+    <Content Include="Images\Record\stopButton_480.png" />
+    <Content Include="Images\Record\stopButton_768.png" />
+    <Content Include="Images\Record\upperStrip_480.png" />
+    <Content Include="Images\Record\upperStrip_768.png" />
+    <Content Include="Images\redButton.png" />
+    <Content Include="Images\Registration\RegistrationBg_768.png" />
+    <Content Include="Images\Registration\submitButton_480.png" />
+    <Content Include="Images\Registration\submitButton_768.png" />
+    <Content Include="Images\Registration\wellcomeStrip_768.png" />
+    <Content Include="Images\ScorePage\2ndpage-01.jpg" />
+    <Content Include="Images\ScorePage\blueLine.png" />
+    <Content Include="Images\ScorePage\bubble.png" />
+    <Content Include="Images\ScorePage\flagImg.png" />
+    <Content Include="Images\ScorePage\getaquoteButton.png" />
+    <Content Include="Images\ScorePage\greenLine.png" />
+    <Content Include="Images\ScorePage\greyLine.png" />
+    <Content Include="Images\ScorePage\mainBg.png" />
+    <Content Include="Images\ScorePage\progressBg.png" />
+    <Content Include="Images\ScorePage\upperStrip.png" />
+    <Content Include="Images\shadow.png" />
+    <Content Include="Images\Splash\SplashPage_768.png" />
+    <Content Include="Images\Splash\SplashScreenImage_480.jpg" />
+    <Content Include="Images\Splash\SplashPage_480.png" />
+    <Content Include="Images\submityourdetailsButton.png" />
+    <Content Include="Images\tableRow.png" />
+    <Content Include="Images\twitterBg.png" />
+    <Content Include="Images\upperStrip_480.png" />
+    <Content Include="Images\Registration\wellcomeStrip_480.png" />
+    <Content Include="License-LGPL.txt" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Scripts\g.bar-min.js" />
+    <Content Include="Scripts\g.bar.js" />
+    <Content Include="Scripts\g.dot-min.js" />
+    <Content Include="Scripts\g.dot.js" />
+    <Content Include="Scripts\g.line-min.js" />
+    <Content Include="Scripts\g.line.js" />
+    <Content Include="Scripts\g.pie-min.js" />
+    <Content Include="Scripts\g.pie.js" />
+    <Content Include="Scripts\g.raphael-min.js" />
+    <Content Include="Scripts\g.raphael.js" />
+    <Content Include="Scripts\raphael-min.js" />
+    <Content Include="Scripts\raphael.js" />
+    <Content Include="Scripts\typings\amcharts\AmCharts.d.ts" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{D192A69A-E1CC-4481-8EF1-707FC595E1AD}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPSTrackingOnBackground\GPSTrackingOnBackground.csproj">
+      <Project>{2DE2D9D7-0B86-4168-AA52-DB4D65DB9664}</Project>
+      <Name>GPSTrackingOnBackground</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AmCharts.Windows.QuickCharts.WP">
+      <HintPath>..\packages\amChartsQuickCharts.1.1\lib\sl3-wp\AmCharts.Windows.QuickCharts.WP.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.4.2\lib\wp8\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Client">
+      <HintPath>..\packages\Facebook.Client.0.8.0-alpha\lib\wp8\Facebook.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock.WindowsPhone">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\sl4-wp\Hammock.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib.WindowsPhone">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\sl4-wp\ICSharpCode.SharpZipLib.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="JeffWilcox.PhoneThemeManager">
+      <HintPath>..\packages\PhoneThemeManager.1.4\lib\sl4-windowsphone71\JeffWilcox.PhoneThemeManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\sl4-wp\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OsmSharp.Osm">
+      <HintPath>..\packages\OsmSharp.3.1.4840.2\lib\sl4-wp71\OsmSharp.Osm.dll</HintPath>
+    </Reference>
+    <Reference Include="OsmSharp.Routing">
+      <HintPath>..\packages\OsmSharp.3.1.4840.2\lib\sl4-wp71\OsmSharp.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="OsmSharp.Tools">
+      <HintPath>..\packages\OsmSharp.3.1.4840.2\lib\sl4-wp71\OsmSharp.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.0.0.640\lib\windowsphone8\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="TweetSharp.WindowsPhone">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\sl4-wp\TweetSharp.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.1.9.2\lib\portable-net4+sl4+wp71+win8\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.7\tools\Microsoft.Bcl.Build.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />
+</Project>

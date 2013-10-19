@@ -1,0 +1,43 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="AgeasDriver.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Style="{StaticResource PageStyle}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded_1">
+
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="DoorOpen">
+        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.CenterOfRotationX)" Storyboard.TargetName="LayoutRoot" d:IsOptimized="True"/>
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="LayoutRoot">
+            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="LayoutRoot">
+            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="90"/>
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        
+
+        <Image Stretch="Fill" Name="imgBackground" HorizontalAlignment="Left"  Margin="0,0,0,0" Grid.Row="0"  VerticalAlignment="Top"  />
+        <ProgressBar HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Name="progressBar1" IsIndeterminate="True" VerticalAlignment="Center" Height="80" Width="240" Margin="0,280,0,320" Value="25" />
+    </Grid>
+
+
+   </phone:PhoneApplicationPage>
+    
+    
+    
